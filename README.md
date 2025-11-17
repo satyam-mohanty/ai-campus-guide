@@ -1,63 +1,86 @@
-AI-Based Virtual Campus Guide
+📘 AI-Based Virtual Campus Guide
 
-A simple AI Reflex Agent (chatbot) built in Python and Tkinter for a university project. This agent uses rule-based logic and fuzzy string matching to understand user queries and provide information about campus departments, labs, and timings from a static knowledge base.
+A rule-based intelligent agent designed to assist students with campus-related queries such as department locations, lab timings, and faculty information.
+The project includes both a Command Line Interface (CLI) version and a Tkinter-based GUI prototype.
 
-This project demonstrates the evolution from a basic command-line interface (CLI) to a clean, modern, and user-friendly graphical user interface (GUI).
+This system aligns with core AI concepts from Introduction to AI & Intelligent Agents, demonstrating reflex-based agent behavior, knowledge representation, and natural language preprocessing.
 
-Key Features
+**🚀 Features**
+Time-based greeting (on start and exit)
+Entity detection using fuzzy matching (handles spelling mistakes)
+Intent detection (location, timing, HOD queries)
+Rule-based response system
+Modular Python backend
+Tkinter GUI prototype
+CLI version fully functional
+Extensible knowledge base using Python dictionaries
+Clean architecture with separate logic, utilities, and data files
 
-Simple Reflex Agent: The bot operates on a simple CONDITION-ACTION rule-based system.
+**🧠 How the System Works**
+**1. Text Normalization**
 
-Natural Language Input: Users can type questions in plain English.
+User input is cleaned using regex, lowercasing, and whitespace handling.
 
-Fuzzy String Matching: Uses fuzzywuzzy to handle common spelling mistakes (e.g., "libary" vs. "library").
+**2. Entity Detection**
 
-Intent Recognition: Detects user intent (e.g., "where," "when," "who") based on keywords.
+The system matches user queries with campus entities using:
+fuzzywuzzy
+python-Levenshtein
+This enables detection even with spelling errors.
 
-Modern GUI: A clean, responsive, and "premium" styled GUI built with Python's standard Tkinter library.
+**3. Intent Classification**
 
-Modular Design: The core logic, knowledge base, and UI are separated, making the code easy to maintain and understand.
+Simple keyword-based intent recognition:
+“where” → location queries
+“when” → timing queries
+“who” → HOD/faculty queries
 
-How to Run
+**4. Response Generation**
 
-1. Prerequisites
+Responses are generated using structured KB values:
+locations
+hours
+HOD names
 
-Python 3.6+
+**🖥️ Installation & Setup**
+1. Install Python Dependencies
+pip install fuzzywuzzy python-Levenshtein
 
-pip (Python package installer)
-
-2. Setup
-
-Clone the repository:
-
-git clone [https://github.com/](https://github.com/)[YourUsername]/[YourRepoName].git
-cd [YourRepoName]
-
-
-Create a Virtual Environment (Recommended):
-
-# Create a new environment named 'venv'
-python -m venv venv
-
-# Activate the environment
-# On Windows:
-.\venv\Scripts\activate
-# On macOS/Linux:
-source venv/bin/activate
-
-
-Install Dependencies:
-
-pip install -r requirements.txt
-
-
-3. Run the Application
-
-To run the GUI version of the application, execute the main GUI script:
-
+**▶️ Running the Project**
+To run the GUI
 python bot_gui.py
 
+To run CLI Version
+python bot_cli.py
 
-(Note: File names may vary if you have renamed them, e.g., main.py or app.py)
+**🧩 Technologies Used**
+**Backend**
+Python
+fuzzywuzzy
+python-Levenshtein
 
-The chat window will open, and you can begin interacting with the Virtual Campus Guide.
+**Frontend**
+will update when done
+
+
+**🎨 UI Notes**
+
+The current GUI uses Tkinter, which limits modern UI design.
+
+**A planned upgrade includes:**
+
+JavaScript-based interactive chat interface
+Modern styling using CSS
+Node.js backend integration for real-time responses
+
+**🔮 Future Enhancements:**
+
+Replace dictionary KB with LLM-powered responses
+Real-time campus data from APIs
+Voice input and text-to-speech
+Expanded campus details and services
+Better UI using React, Vue, or Svelte
+Electron desktop app version
+
+**✨ Author**
+Satyam Mohanty
